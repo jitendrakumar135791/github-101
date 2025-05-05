@@ -1,0 +1,33 @@
+Q1. You're provided with a LLama3.2 8b. Write a scenario where you'd need fine tuning and explain the process.
+
+Ans: LLama3.2 8b perameters model is general purpose model, where if I would take a scenario where I need ask for DX codes (ICD10) for few disease, in that case it might hellucinate(guess), because it might
+      not have a rich context of these medical terms and probably trained on this scope. so we we can take this LLama3.2 8b as a base model and follow few steps to make it a bit domain specific for our use case fit.
+      and help us in, enhances medical language understanding, reduces hallucinations, improves accuracy as well. 
+      we can follow below process:
+      we can start the  process with medical data (e.g., clinical notes, Q&A, medical guidelines) and formatting it into instruction-response pairs.
+      Using efficient methods like LORA, QLoRA with defined rand like 4 or 8 whicheve suites,
+      and then fine-tune the model with tools like Hugging Face Transformers and PEFT, LORA and QLORA enables the model to learn medical language and context without needing large hardware infrastructure.
+      After training, evaluate with MedQA MCQ dataset and medical domain expertfeedback to ensure whether reaponse is accurate or hellucinated, once evaaluation done , model can be deployed.
+
+Q2. A customer is satisfied overall with our implementation of an IT support chatbot (using RAG) that constructs answers based on similar prior IT support tickets, how can we further personalise the responses to the specific user? Explain your choice and the steps needed.
+
+Ans:  To make the IT support chatbot more personal for each and every user, we can use information about the user to validate its responses.
+      like there are many chatots over banking, medical, it and many more where bots 
+      takes feedback from user to personalise the response more in future.
+      This means the chatbot won't just answer based on the question alone, but also on who is asking. For example, if someone from the finance team is 
+      using a Windows laptop and has had VPN problems before, the chatbot can take all of that into account to give a better, more specific answer.
+      It avoids giving generic responses and instead provides something that fits the user’s situation more closely.
+      This is done by collecting basic user information, such as their department, device type, software they use, 
+      past support issues, and how comfortable they are with technology. This data helps the chatbot understand the
+      context behind a question. When a user asks something, the chatbot can use this information to search through 
+      only the most relevant past support tickets, making its search smarter and faster. Then, when generating the response, 
+      the chatbot uses the same user details to phrase the answer in a more helpful way — maybe skipping basic steps for an
+      experienced user or giving simpler instructions to someone who’s not very technical.
+      We can also ask users to rate the answers, so the chatbot learns which responses are helpful and can improve over time.
+      Overall, by combining user information with smart search and answer generation, the chatbot becomes much more useful
+
+Q3. You're given a task of hosting a llama3.1 70b . Which GPU you'd select and why ?
+Ans: llama3.1 70b means 70 billion perameters model is a large model, once the model is loaded in to memory it might occupy around 140GB of memory,so NVIDIA H100 80GB, worksfine  here which has large VRAM of 80 GB, and high
+      bandwith which is require during comoplex tensor computation. 
+
+Q4.  Please provide a link to publicly accessible repository (e.g. GitHub, HuggingFace) which demonstrates something you have built involving LLMs
