@@ -28,6 +28,6 @@ Ans:  To make the IT support chatbot more personal for each and every user, we c
 
 Q3. You're given a task of hosting a llama3.1 70b . Which GPU you'd select and why ?
 Ans: llama3.1 70b means 70 billion perameters model is a large model, once the model is loaded in to memory it might occupy around 140GB of memory,so NVIDIA H100 80GB, worksfine  here which has large VRAM of 80 GB, and high
-      bandwith which is require during comoplex tensor computation. 
+      bandwith which is require during comoplex tensor computation. RTX 3XXX, 4XXXX,A6XX will give OOM here so A100 is better choice in this usecase.
 
 Q4.  Please provide a link to publicly accessible repository (e.g. GitHub, HuggingFace) which demonstrates something you have built involving LLMs
